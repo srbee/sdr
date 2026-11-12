@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10243a">
+  <title>RTL-SDR Quick Access</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 28px 16px;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #eef6ff;
+      background: radial-gradient(ellipse at top, #23496a 0, #10243a 48%, #091522 100%);
+      display: flex; justify-content: center; align-items: flex-start;
+    }
+    main { width: 100%; max-width: 620px; }
+    header { text-align: center; margin: 12px 0 28px; }
+    .radio { font-size: 42px; }
+    h1 { margin: 8px 0 6px; font-size: clamp(1.7rem, 6vw, 2.35rem); }
+    .sub { color: #b9cde0; margin: 0; }
+    .card {
+      display: block; text-decoration: none; color: inherit;
+      background: rgba(255,255,255,.085); border: 1px solid rgba(255,255,255,.16);
+      border-radius: 18px; padding: 19px; margin: 14px 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,.16);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .card:active { transform: scale(.985); background: rgba(255,255,255,.14); }
+    .card h2 { margin: 0 0 6px; font-size: 1.25rem; }
+    .card p { margin: 0; color: #c7d8e8; line-height: 1.45; }
+    .url { display: block; margin-top: 10px; color: #83d8ff; font-size: .88rem; overflow-wrap: anywhere; }
+    .tag { display: inline-block; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase;
+      color: #092033; background: #83d8ff; padding: 4px 8px; border-radius: 99px; margin-bottom: 9px; font-weight: 700; }
+    .note { margin-top: 24px; padding: 16px; border-radius: 14px; background: rgba(0,0,0,.2);
+      color: #c5d5e4; font-size: .92rem; line-height: 1.5; }
+    .note strong { color: #fff; }
+    footer { text-align: center; color: #8fa7bd; font-size: .8rem; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="radio" aria-hidden="true">📻</div>
+      <h1>RTL-SDR Quick Access</h1>
+      <p class="sub">Browser-based receivers and ham-radio tools</p>
+    </header>
+
+    <a class="card" href="https://radio.ea1iti.es/" target="_blank" rel="noopener noreferrer">
+      <span class="tag">Open receiver</span>
+      <h2>1. Radio Receiver — EA1ITI</h2>
+      <p>Use an RTL-SDR USB dongle directly from a compatible browser. Includes spectrum, waterfall and several demodulation modes.</p>
+      <span class="url">radio.ea1iti.es ↗</span>
+    </a>
+
+    <a class="card" href="https://github.com/diddy-boy/OFFgrid-SDR" target="_blank" rel="noopener noreferrer">
+      <span class="tag">Download / run locally</span>
+      <h2>2. OFFgrid-SDR</h2>
+      <p>Single-file RTL-SDR receiver. Open the project, download its <strong>index.html</strong>, then open that file in Chrome or Edge and connect your dongle.</p>
+      <span class="url">github.com/diddy-boy/OFFgrid-SDR ↗</span>
+    </a>
+
+    <a class="card" href="https://hamdash.com/sdr" target="_blank" rel="noopener noreferrer">
+      <span class="tag">Open SDR page</span>
+      <h2>3. HamDash — SDR Receiver</h2>
+      <p>Open HamDash’s SDR receiver page and explore its SDRcom receiver options.</p>
+      <span class="url">hamdash.com/sdr ↗</span>
+    </a>
+
+    <section class="note">
+      <strong>Important:</strong> These tools access the RTL-SDR connected to your own device; they are not remote online receivers.
+      Use a Chromium-based browser such as Chrome or Edge. On Android, WebUSB support and USB-OTG compatibility are required.
+      Only one application can use the dongle at a time.
+    </section>
+    <footer>Made for RTL-SDR listening · 73</footer>
+  </main>
+</body>
+</html>
